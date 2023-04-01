@@ -5,6 +5,10 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+    <header>
+      <h1>Message Board</h1>
+      <button class="newButton">Add a message</button>
+    </header>
     <ul>
       <% messages.forEach((message) => { %>
         <li>
@@ -13,5 +17,6 @@
         </li>
       <% }); %>
     </ul>
+    <script src="/javascripts/script.js"></script>
   </body>
 </html>
