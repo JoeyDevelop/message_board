@@ -1,0 +1,54 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(233, 233, 233);
+  margin: 0;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+.header {
+ display: flex;
+ flex-direction: column;
+ justify-content: start;
+ align-items: center;
+ width: 100vw;
+ padding-bottom: 4rem;
+ box-shadow: 0px 10px 5px gray;
+}
+
+.header>button {
+  width: 10rem;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 20px;
+  background-color: #00B7FF;
+}
+
+.message {
+  background-color: #00B7FF;
+  border-radius: 50px;
+  width: fit-content;
+  padding: 1rem;
+  margin: 0rem 2rem 2rem 4rem;
+}
+
+main>:nth-child(1) {
+  margin-top: 4rem;
+}
+
+.message>span {
+  display: flex;
+  justify-content: start;
+  gap: 20px;
+  align-items: center;
+  height: 1rem;
+  padding-bottom: .4rem;
+}
+
+.message>p {
+  margin: 0rem;
+  line-height: 1.3rem;
+}

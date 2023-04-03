@@ -4,15 +4,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>New Message</title>
+  <link rel="stylesheet" href="/stylesheets/new.css">
 </head>
 <body>
-  <form action="/new" method="POST">
-    <label for="text">Enter message:</label>
-    <input type="text" name="text" id="text">
+  <form action="/new" method="POST" class="form">
+    <div class="input">
+      <label for="text">Enter message:</label>
+      <input required type="text" name="text" id="text">
+    </div>
     
-    <label for="user">Username:</label>
-    <input type="text" name="user" id="user">
+    <div class="input">
+      <label for="user">Username:</label>
+      <input required type="text" name="user" id="user">
+    </div>
+
     <button type="submit">Submit</button>
   </form>
 </body>

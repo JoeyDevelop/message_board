@@ -2,21 +2,23 @@
 <html>
   <head>
     <title>Message Board</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
   </head>
   <body>
-    <header>
+    <header class="header">
       <h1>Message Board</h1>
       <button class="newButton">Add a message</button>
     </header>
-    <ul>
+    <main>
       <% messages.forEach((message) => { %>
-        <li>
+        <div class="message">
+          <span>
+            <h3><%= message.user %></h3><h4><%= message.added %></h4>
+          </span>
           <p><%= message.text %></p>
-          <p><%= message.user %> - <%= message.added %></p>
-        </li>
+        </div>
       <% }); %>
-    </ul>
+    </main>
     <script src="/javascripts/script.js"></script>
   </body>
 </html>
