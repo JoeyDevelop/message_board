@@ -8,7 +8,7 @@ const pool = new Pool({
   }
 });
 
-export function fetchFromDatabase() {
+function fetchFromDatabase() {
   pool.query('SELECT * FROM message DESC', (err, res) => {
     if (err) {
       console.error(err)
@@ -17,3 +17,5 @@ export function fetchFromDatabase() {
     }
   })
 }
+
+module.exports = fetchFromDatabase
