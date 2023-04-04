@@ -1,4 +1,5 @@
 var express = require('express');
+const { fetchFromDatabase } = require('../backend');
 var router = express.Router();
 
 const dateFormat = () => {
@@ -35,6 +36,9 @@ let messages = [
     added: dateFormat()
   }
 ];
+
+// TEST Database connection
+fetchFromDatabase();
 
 router.post('/new', (req, res) => {
   const message = req.body.text;
