@@ -1,5 +1,7 @@
+import { fetchFromDatabase } from '../backend';
+
 var express = require('express');
-const { fetchFromDatabase } = require('../backend');
+const { fetchFromDatabase, test } = require('../backend');
 var router = express.Router();
 
 const dateFormat = () => {
