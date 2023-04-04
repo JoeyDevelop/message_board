@@ -9,7 +9,7 @@ const pool = new Pool({
 });
 
 function fetchFromDatabase() {
-  pool.query('SELECT * FROM messages DESC', (err, res) => {
+  pool.query('SELECT * FROM messages ORDER BY date DESC', (err, res) => {
     if (err) {
       console.error(err)
     } else {
