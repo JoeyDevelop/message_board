@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -13,5 +15,15 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "pg": "^8.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "prettier": "^2.8.7"
   }
 }
