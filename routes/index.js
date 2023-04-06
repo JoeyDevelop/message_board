@@ -1,5 +1,4 @@
-const fetchFromDatabase = require('../backend')
-const insertIntoDatabase = require('../backend')
+const { fetchFromDatabase, insertIntoDatabase } = require('../backend');
 
 var express = require('express');
 var router = express.Router();
