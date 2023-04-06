@@ -17,29 +17,31 @@ const dateFormat = () => {
   return formattedDate;
 }
 
-let messages = [
-  {
-    text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elit
-    orci, molestie id erat ut, cursus condimentum sem. Vestibulum feugiat est
-    in ipsum facilisis, at hendrerit lacus cursus. Aenean vel gravida diam, 
-    a laoreet metus. Pellentesque nibh enim, congue id magna a, malesuada ornare 
-    odio. Donec id auctor risus. Phasellus elementum, nulla ac auctor malesuada, 
-    diam tellus mollis mauris, id dapibus mauris leo in lorem. Cras ultricies 
-    ante ut massa auctor viverra. Nunc finibus mauris risus, vitae pulvinar diam 
-    pellentesque quis. Maecenas a quam pharetra, pretium risus nec, efficitur 
-    ipsum. Phasellus quis justo nisl. Morbi non ligula ut tellus suscipit sollicitudin.`,
-    user: 'Amando',
-    added: dateFormat()
-  },
-  {
-    text: 'Hello World!',
-    user: 'Charles',
-    added: dateFormat()
-  }
-];
+// let messages = [
+//   {
+//     text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elit
+//     orci, molestie id erat ut, cursus condimentum sem. Vestibulum feugiat est
+//     in ipsum facilisis, at hendrerit lacus cursus. Aenean vel gravida diam, 
+//     a laoreet metus. Pellentesque nibh enim, congue id magna a, malesuada ornare 
+//     odio. Donec id auctor risus. Phasellus elementum, nulla ac auctor malesuada, 
+//     diam tellus mollis mauris, id dapibus mauris leo in lorem. Cras ultricies 
+//     ante ut massa auctor viverra. Nunc finibus mauris risus, vitae pulvinar diam 
+//     pellentesque quis. Maecenas a quam pharetra, pretium risus nec, efficitur 
+//     ipsum. Phasellus quis justo nisl. Morbi non ligula ut tellus suscipit sollicitudin.`,
+//     user: 'Amando',
+//     added: dateFormat()
+//   },
+//   {
+//     text: 'Hello World!',
+//     user: 'Charles',
+//     added: dateFormat()
+//   }
+// ];
 
 // TEST Database connection
 fetchFromDatabase();
+
+console.log(messages)
 
 router.post('/new', (req, res) => {
   const message = req.body.text;
