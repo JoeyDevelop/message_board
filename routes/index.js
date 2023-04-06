@@ -39,9 +39,6 @@ const dateFormat = () => {
 // ];
 
 // TEST Database connection
-const messages = fetchFromDatabase();
-
-console.log(messages)
 
 router.post('/new', (req, res) => {
   const message = req.body.text;
@@ -54,8 +51,14 @@ router.post('/new', (req, res) => {
 })
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { messages });
+router.get('/', async function(req, res, next) {
+  try {
+    const messages = await fetchFromDatabase();
+    res.render('index', { messages });
+  } catch (err) {
+    console.error(err);
+    res.render('error', { message: 'Error fetching messages from database.'})
+  }
 });
 
 router.get('/new', function(req, res) {
