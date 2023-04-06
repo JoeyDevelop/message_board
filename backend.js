@@ -31,4 +31,4 @@ function insertIntoDatabase(message, username, date) {
   })
 }
 
-module.exports = fetchFromDatabase, insertIntoDatabase
+module.exports = { fetchFromDatabase, insertIntoDatabase };
