@@ -9,17 +9,16 @@ const pool = new Pool({
 });
 
 function fetchFromDatabase() {
-  pool.query('SELECT * FROM messages ORDER BY date DESC', (err, res) => {
-    if (err) {
-      console.error(err)
-    } else {
-      const messages = res.rows;
-      console.log('////////////////////////////')
-      console.log(messages)
-      console.log('////////////////////////////')
-      return messages
-    }
-  })
+  return new Promise((resolve, reject) => {
+    pool.query('SELECT * FROM messages ORDER BY date DESC', (err, res) => {
+      if (err) {
+        reject(err);
+      } else {
+        const messages = res.rows;
+        resolve(messages);
+      }
+    });
+  });
 }
 
 function insertIntoDatabase(message, username, date) {
