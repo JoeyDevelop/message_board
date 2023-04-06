@@ -1,4 +1,5 @@
 const fetchFromDatabase = require('../backend')
+const insertIntoDatabase = require('../backend')
 
 var express = require('express');
 var router = express.Router();
@@ -42,10 +43,10 @@ const dateFormat = () => {
 
 router.post('/new', (req, res) => {
   const message = req.body.text;
-  const user = req.body.user
+  const username = req.body.user
+  const date = dateFormat()
 
-  messages.push({ text: message, user: user, added: dateFormat()})
-  console.log(messages)
+  insertIntoDatabase(message, username, date);
 
   res.redirect('/')
 })
