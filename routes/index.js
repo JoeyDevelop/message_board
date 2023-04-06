@@ -39,7 +39,7 @@ const dateFormat = () => {
 // ];
 
 // TEST Database connection
-fetchFromDatabase();
+const messages = fetchFromDatabase();
 
 console.log(messages)
 
