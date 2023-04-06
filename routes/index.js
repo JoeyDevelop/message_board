@@ -3,9 +3,10 @@ const { fetchFromDatabase, insertIntoDatabase } = require('../backend')
 const express = require('express')
 const router = express.Router()
 
+// FUNCTION TO GET EST DATE AND TIME
 function getFormattedDateTime () {
   const date = new Date()
-  const timeZone = 'America/New_York' // replace with user's timezone
+  const timeZone = 'America/New_York' // EST TIME ZONE
   const options = {
     hour: 'numeric',
     minute: 'numeric',
@@ -18,6 +19,7 @@ function getFormattedDateTime () {
   return formattedDateTime
 }
 
+// HANDLE FORM SUBMIT
 router.post('/new', (req, res) => {
   const message = req.body.text
   const username = req.body.user
@@ -28,7 +30,7 @@ router.post('/new', (req, res) => {
   res.redirect('/')
 })
 
-/* GET home page. */
+// GET HOME PAGE
 router.get('/', async function (req, res, next) {
   try {
     const messages = await fetchFromDatabase()
@@ -39,6 +41,7 @@ router.get('/', async function (req, res, next) {
   }
 })
 
+// GET NEW PAGE
 router.get('/new', function (req, res) {
   res.render('new')
 })
