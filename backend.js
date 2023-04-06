@@ -17,6 +17,7 @@ function fetchFromDatabase() {
       console.log('////////////////////////////')
       console.log(messages)
       console.log('////////////////////////////')
+      return messages
     }
   })
 }
