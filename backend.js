@@ -29,6 +29,6 @@ function insertIntoDatabase(message, username, date) {
       console.log('SUCCESS')
     }
   })
-}
+} 
 
 module.exports = { fetchFromDatabase, insertIntoDatabase };
