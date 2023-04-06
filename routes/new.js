@@ -1,8 +1,8 @@
-// const express = require('express');
-// const router = express.Router();
+const express = require('express')
+const router = express.Router()
 
-// router.get('/new', function(req, res) {
-//   res.render('new');
-// })
+router.get('/new', function (req, res) {
+  res.render('new')
+})
 
-// module.exports = router;
+module.exports = router
