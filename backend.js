@@ -13,6 +13,19 @@ function fetchFromDatabase() {
     if (err) {
       console.error(err)
     } else {
+      const messages = res.rows;
+      console.log('////////////////////////////')
+      console.log(messages)
+      console.log('////////////////////////////')
+    }
+  })
+}
+
+function insertIntoDatabase(message, username, date) {
+  pool.query(`INSERT INTO messages (message, username, date) VALUES ('${message}', '${username}', '${date}')`, (err, res) => {
+    if (err) {
+      console.error(err)
+    } else {
       console.log('SUCCESS')
     }
   })
