@@ -10,7 +10,7 @@ const pool = new Pool({
 
 function fetchFromDatabase() {
   return new Promise((resolve, reject) => {
-    pool.query('SELECT * FROM messages ORDER BY date DESC', (err, res) => {
+    pool.query('SELECT * FROM messages ORDER BY id DESC', (err, res) => {
       if (err) {
         reject(err);
       } else {
