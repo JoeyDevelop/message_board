@@ -3,18 +3,15 @@ const { fetchFromDatabase, insertIntoDatabase } = require('../backend');
 var express = require('express');
 var router = express.Router();
 
-const dateFormat = () => {
-  const date = new Date()
-  
+function getFormattedDateTime() {
+  const date = new Date();
   const hours = date.getHours() % 12 || 12;
   const minutes = date.getMinutes().toString().padStart(2, '0');
-
   const month = (date.getMonth() + 1).toString().padStart(2, '0');
   const day = date.getDate().toString().padStart(2, '0');
   const year = date.getFullYear().toString().slice(-2);
-
-  const formattedDate = `${hours}:${minutes} - ${month}/${day}/${year}`;
-  return formattedDate;
+  const formattedDateTime = `${hours}:${minutes} - ${month}-${day}-${year}`;
+  return formattedDateTime;
 }
 
 // let messages = [
@@ -43,7 +40,7 @@ const dateFormat = () => {
 router.post('/new', (req, res) => {
   const message = req.body.text;
   const username = req.body.user
-  const date = dateFormat()
+  const date = getFormattedDateTime()
 
   insertIntoDatabase(message, username, date);
 
