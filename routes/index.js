@@ -5,12 +5,16 @@ var router = express.Router();
 
 function getFormattedDateTime() {
   const date = new Date();
-  const hours = date.getHours() % 12 || 12;
-  const minutes = date.getMinutes().toString().padStart(2, '0');
-  const month = (date.getMonth() + 1).toString().padStart(2, '0');
-  const day = date.getDate().toString().padStart(2, '0');
-  const year = date.getFullYear().toString().slice(-2);
-  const formattedDateTime = `${hours}:${minutes} - ${month}-${day}-${year}`;
+  const timeZone = 'America/New_York'; // replace with user's timezone
+  const options = {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true,
+    timeZone
+  };
+  const formattedTime = date.toLocaleString('en-US', options);
+  const formattedDate = date.toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' });
+  const formattedDateTime = `${formattedTime} - ${formattedDate}`;
   return formattedDateTime;
 }
 
